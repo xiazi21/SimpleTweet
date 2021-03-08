@@ -9,6 +9,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Parcel
 @Entity
 public class User {
@@ -37,5 +40,13 @@ public class User {
         return user;
 
 
+    }
+
+    public static List<User> fromJsonTweetArray(List<Tweet> tweetsFromNetwork) {
+        List<User> users = new ArrayList<>();;
+        for(int i = 0; i < tweetsFromNetwork.size(); i++){
+            users.add(tweetsFromNetwork.get(i).user);
+        }
+        return users;
     }
 }

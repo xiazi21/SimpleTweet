@@ -37,6 +37,7 @@ public class Tweet {
 
 
 
+    @Ignore
 
 
     public Tweet() {}
